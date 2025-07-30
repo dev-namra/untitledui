@@ -1,116 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Pricing Plans - Untitled UI</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-white text-gray-900 container mx-auto px-4">
+<body class="bg-white text-gray-900 px-4">
   <!-- Navigation -->
-  <nav class="flex items-center justify-between max-w-7xl mx-auto py-4 px-4">
+  <nav class="container mx-auto flex items-center justify-between py-4">
     <div class="flex items-center gap-8">
       <span class="font-bold text-lg">Untitled UI</span>
       <div class="hidden lg:flex gap-6">
-        <a href="#" class="hover:text-black text-gray-600">Home</a>
-        <a href="#" class="hover:text-black text-gray-600">Products</a>
-        <a href="#" class="hover:text-black text-gray-600">Resources</a>
-        <a href="#" class="hover:text-black text-gray-600">Pricing</a>
+        <a href="#" class="text-gray-600 hover:text-black">Home</a>
+        <a href="#" class="text-gray-600 hover:text-black">Products</a>
+        <a href="#" class="text-gray-600 hover:text-black">Resources</a>
+        <a href="#" class="text-gray-600 hover:text-black">Pricing</a>
       </div>
     </div>
     <div class="flex gap-3">
-      <button class="px-4 py-2 rounded border border-gray-200 text-gray-700 hover:bg-gray-100">Log in</button>
+      <button class="px-4 py-2 rounded text-gray-700 hover:bg-gray-100">Log in</button>
       <button class="px-4 py-2 rounded bg-gray-900 text-white font-semibold hover:bg-gray-700">Sign up</button>
     </div>
   </nav>
 
   <!-- Header -->
-  <section class="max-w-6xl mt-10">
-    <h1 class="text-4xl md:text-5xl font-bold mb-4">We’ve got a plan <br> that’s perfect for you</h1>
-    <div class="flex items-start justify-start gap-3 mt-4 mb-10">
-      <button class="py-2 px-5 rounded bg-gray-900 text-white font-semibold">Monthly billing</button>
-      <button class="py-2 px-5 rounded bg-white text-gray-700 border border-gray-200">Annual billing</button>
+  <section class="container mx-auto mt-12 md:mt-20 text-left">
+    <h1 class="text-3xl md:text-7xl font-bold leading-tight">We’ve got a plan <br />that’s perfect for you</h1>
+    <div class="flex mt-6 mb-10 border border-gray-200 p-2 w-full max-w-xs rounded-md">
+      <button class="w-1/2 py-2 px-4 rounded bg-gray-900 text-white font-semibold text-sm">Monthly billing</button>
+      <button class="w-1/2 py-2 px-4 rounded text-sm">Annual billing</button>
     </div>
   </section>
 
   <!-- Pricing Cards -->
-  <section class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 mb-14">
-    <!-- Basic plan -->
-    <div class="flex-1 border rounded-xl p-7 bg-white shadow text-left">
-      <h2 class="text-xl font-bold mb-2">Basic plan</h2>
-      <div class="text-3xl font-extrabold mb-1">$10 <span class="text-base font-medium text-gray-500">per user</span></div>
-      <div class="text-gray-500 mb-5">Basic features for up to 10 users.</div>
-      <button class="w-full py-2 rounded bg-gray-900 text-white font-semibold mb-2">Get started</button>
-      <button class="w-full py-2 rounded border border-gray-200 text-gray-700 mb-5">Chat to sales</button>
-      <ul class="text-sm space-y-2 mt-4">
-        <li class="flex items-center"><span class="mr-2 text-green-500">✔</span> Access to basic features</li>
-        <li class="flex items-center"><span class="mr-2 text-green-500">✔</span> Basic reporting and analytics</li>
-        <li class="flex items-center"><span class="mr-2 text-green-500">✔</span> Up to 10 individual users</li>
-        <li class="flex items-center"><span class="mr-2 text-green-500">✔</span> 20GB individual data each user</li>
-        <li class="flex items-center"><span class="mr-2 text-green-500">✔</span> Basic chat and email support</li>
-      </ul>
-    </div>
+  <section class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
+    <!-- Card Component -->
+    <article class="flex flex-col justify-between border rounded-xl bg-white shadow text-left">
+      <div class="p-6 flex flex-col gap-4">
+        <h2 class="text-xl font-bold">Basic plan</h2>
+        <div class="flex items-end gap-2">
+          <p class="text-5xl font-extrabold">$10</p>
+          <div class="text-sm font-medium text-gray-800">
+            <p>per user</p>
+            <p>per month</p>
+          </div>
+        </div>
+        <p class="text-gray-700">Basic features for up to 10 users.</p>
+        <div class="flex flex-col gap-2">
+          <button class="w-full py-2 rounded bg-gray-900 text-white font-semibold">Get started</button>
+          <button class="w-full py-2 rounded border border-gray-800 text-black">Chat to sales</button>
+        </div>
+      </div>
+      <hr class="border-t border-black" />
+      <div class="flex flex-col p-6">
+        <h3 class="font-semibold">FEATURES</h3>
+        <p class="text-sm text-gray-700 mt-1">Everything in our Basic plan:</p>
+        <ul class="text-sm space-y-2 mt-4">
+          <li class="flex items-center"><span class="mr-2 text-green-500">✔</span> Access to basic features</li>
+          <li class="flex items-center"><span class="mr-2 text-green-500">✔</span> Basic reporting and analytics</li>
+          <li class="flex items-center"><span class="mr-2 text-green-500">✔</span> Up to 10 individual users</li>
+          <li class="flex items-center"><span class="mr-2 text-green-500">✔</span> 20GB individual data each user</li>
+          <li class="flex items-center"><span class="mr-2 text-green-500">✔</span> Basic chat and email support</li>
+        </ul>
+      </div>
+    </article>
 
     <!-- Business plan -->
-    <div class="flex-1 border-2 border-green-500 rounded-xl p-7 bg-gray-900 text-white shadow text-left relative">
-      <div class="absolute top-5 right-5 px-2 py-1 bg-green-100 text-green-900 text-xs rounded-full font-bold">Popular</div>
-      <h2 class="text-xl font-bold mb-2">Business plan</h2>
-      <div class="text-3xl font-extrabold mb-1">$20 <span class="text-base font-medium text-gray-300">per user</span></div>
-      <div class="text-gray-300 mb-5">Growing teams up to 20 users.</div>
-      <button class="w-full py-2 rounded bg-green-500 text-gray-900 font-semibold mb-2">Get started</button>
-      <button class="w-full py-2 rounded border border-gray-700 text-white mb-5">Chat to sales</button>
-      <ul class="text-sm space-y-2 mt-4">
-        <li class="flex items-center"><span class="mr-2 text-green-400">✔</span> Everything in Basic plus...</li>
-        <li class="flex items-center"><span class="mr-2 text-green-400">✔</span> 200+ integrations</li>
-        <li class="flex items-center"><span class="mr-2 text-green-400">✔</span> Advanced reporting and analytics</li>
-        <li class="flex items-center"><span class="mr-2 text-green-400">✔</span> Up to 20 individual users</li>
-        <li class="flex items-center"><span class="mr-2 text-green-400">✔</span> 40GB individual data each user</li>
-        <li class="flex items-center"><span class="mr-2 text-green-400">✔</span> Priority chat and email support</li>
-      </ul>
-    </div>
+    <article class="relative flex flex-col justify-between border rounded-xl bg-gray-900 shadow text-left text-white">
+       <div class="absolute top-6 right-6 px-2 py-1 bg-[#adff12] text-black text-xs rounded-full font-bold">Popular</div>
+      <div class="p-6 flex flex-col gap-4">
+        <h2 class="text-xl font-bold text-[#adff12]">Business plan</h2>
+        <div class="flex items-end gap-2">
+          <p class="text-5xl font-extrabold">$20</p>
+          <div class="text-sm font-medium">
+            <p>per user</p>
+            <p>per month</p>
+          </div>
+        </div>
+        <p class="text-gray-100">Growing teams up to 20 users.</p>
+        <div class="flex flex-col gap-2">
+          <button class="w-full py-2 rounded bg-[#adff12] text-black font-semibold">Get started</button>
+          <button class="w-full py-2 rounded border border-gray-800 text-black bg-white">Chat to sales</button>
+        </div>
+      </div>
+      <hr class="border-t border-gray-100" />
+      <div class="flex flex-col p-6">
+        <h3 class="font-semibold text-gray-200">FEATURES</h3>
+        <p class="text-sm text-gray-200 mt-1">Everything in our Business plan:</p>
+        <ul class="text-sm space-y-2 mt-4">
+          <li class="flex items-center"><span class="mr-2">✔</span> 200+ integrations</li>
+          <li class="flex items-center"><span class="mr-2">✔</span> Advanced reporting and analytics</li>
+          <li class="flex items-center"><span class="mr-2">✔</span> Up to 20 individual users</li>
+          <li class="flex items-center"><span class="mr-2">✔</span> 40GB individual data each user</li>
+          <li class="flex items-center"><span class="mr-2">✔</span> Priority chat and email support</li>
+        </ul>
+      </div>
+    </article>
 
     <!-- Enterprise plan -->
-    <div class="flex-1 border rounded-xl p-7 bg-white shadow text-left">
-      <h2 class="text-xl font-bold mb-2">Enterprise plan</h2>
-      <div class="text-3xl font-extrabold mb-1">$40 <span class="text-base font-medium text-gray-500">per user</span></div>
-      <div class="text-gray-500 mb-5">Advanced features + unlimited users.</div>
-      <button class="w-full py-2 rounded bg-gray-900 text-white font-semibold mb-2">Get started</button>
-      <button class="w-full py-2 rounded border border-gray-200 text-gray-700 mb-5">Chat to sales</button>
-      <ul class="text-sm space-y-2 mt-4">
-        <li class="flex items-center"><span class="mr-2 text-green-500">✔</span> Everything in Business plus...</li>
-        <li class="flex items-center"><span class="mr-2 text-green-500">✔</span> Enhanced custom fields</li>
-        <li class="flex items-center"><span class="mr-2 text-green-500">✔</span> Audit log and data history</li>
-        <li class="flex items-center"><span class="mr-2 text-green-500">✔</span> Unlimited individual data</li>
-        <li class="flex items-center"><span class="mr-2 text-green-500">✔</span> Personalized+priority service</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- FAQs Section -->
-  <section class="max-w-2xl mx-auto my-12 px-4">
-    <h2 class="text-2xl font-bold mb-6 text-center">Frequently asked questions</h2>
-    <div class="divide-y divide-gray-200 border rounded-xl p-6 bg-gray-50">
-      <details class="py-3">
-        <summary class="font-semibold cursor-pointer">Can I change my plan later?</summary>
-        <p class="mt-2 text-gray-700">Yes, you can upgrade or downgrade your plan at any time from your account dashboard. Changes will be reflected on your next billing cycle.</p>
-      </details>
-      <details class="py-3">
-        <summary class="font-semibold cursor-pointer">What is your refund policy?</summary>
-        <p class="mt-2 text-gray-700">We offer a 30-day money-back guarantee if you're not satisfied with your purchase for any reason.</p>
-      </details>
-      <details class="py-3">
-        <summary class="font-semibold cursor-pointer">Is there a free trial available?</summary>
-        <p class="mt-2 text-gray-700">Currently, we do not offer a free trial, but you can start with the Basic plan and upgrade as your needs grow.</p>
-      </details>
-      <details class="py-3">
-        <summary class="font-semibold cursor-pointer">Can I cancel at any time?</summary>
-        <p class="mt-2 text-gray-700">Yes. There are no contracts or hidden fees. You can cancel your subscription at any time.</p>
-      </details>
-      <details class="py-3">
-        <summary class="font-semibold cursor-pointer">How do I contact support?</summary>
-        <p class="mt-2 text-gray-700">Support is available via live chat and email for all plans. We provide priority support to Business and Enterprise customers.</p>
-      </details>
-    </div>
+    <article class="flex flex-col justify-between border rounded-xl bg-white shadow text-left">
+      <div class="p-6 flex flex-col gap-4">
+        <h2 class="text-xl font-bold">Enterprise plan</h2>
+        <div class="flex items-end gap-2">
+          <p class="text-5xl font-extrabold">$40</p>
+          <div class="text-sm font-medium text-gray-800">
+            <p>per user</p>
+            <p>per month</p>
+          </div>
+        </div>
+        <p class="text-gray-700">Advanced features + unlimited users.</p>
+        <div class="flex flex-col gap-2">
+          <button class="w-full py-2 rounded bg-gray-900 text-white font-semibold">Get started</button>
+          <button class="w-full py-2 rounded border border-gray-800 text-black">Chat to sales</button>
+        </div>
+      </div>
+      <hr class="border-t border-black" />
+      <div class="flex flex-col p-6">
+        <h3 class="font-semibold">FEATURES</h3>
+        <p class="text-sm text-gray-700 mt-1">Everything in our Enterprise plan:</p>
+        <ul class="text-sm space-y-2 mt-4">
+          <li class="flex items-center"><span class="mr-2 text-green-500">✔</span> Enhanced custom fields</li>
+          <li class="flex items-center"><span class="mr-2 text-green-500">✔</span> Audit log and data history</li>
+          <li class="flex items-center"><span class="mr-2 text-green-500">✔</span> Unlimited individual data</li>
+          <li class="flex items-center"><span class="mr-2 text-green-500">✔</span> Personalized+priority service</li>
+        </ul>
+      </div>
+    </article>
   </section>
 </body>
 </html>
