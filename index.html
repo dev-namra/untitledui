@@ -1,132 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Pricing Plans - Untitled UI</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-white text-gray-900 px-4">
-  <!-- Navigation -->
-  <nav class="container mx-auto flex items-center justify-between py-4">
-    <div class="flex items-center gap-8">
-      <span class="font-bold text-lg">Untitled UI</span>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Untitled UI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="main.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <style>
+      @keyframes fadeSlideIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .fade-slide-in {
+        animation: fadeSlideIn 0.7s ease-out forwards;
+      }
+
+      .fade-delay-1 { animation-delay: 0.1s; }
+      .fade-delay-2 { animation-delay: 0.2s; }
+      .fade-delay-3 { animation-delay: 0.3s; }
+      .fade-delay-4 { animation-delay: 0.4s; }
+      .fade-delay-5 { animation-delay: 0.5s; }
+
+      .price-switch {
+        transition: transform 0.3s ease, opacity 0.3s ease;
+      }
+
+      .price-hide {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+
+      .price-show {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      .show-menu {
+        display: flex !important;
+        opacity: 1 !important;
+        transform: scale(1) !important;
+        pointer-events: auto !important;
+      }
+
+
+    </style>
+  </head>
+  <body class="bg-white text-gray-900 px-4">
+
+    <nav class="container mx-auto flex items-center justify-between py-4">
+      <div class="flex items-center gap-8">
+        <span class="font-bold text-lg">Untitled UI</span>
+      </div>
+      <button id="btn-menu" aria-label="Toggle menu" aria-expanded="false"
+        class="lg:hidden p-2 rounded hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-600">
+        <svg id="icon-open" class="w-6 h-6" xmlns="http://www.w3.org/2000/svg"
+          fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg id="icon-close" class="w-6 h-6 hidden" xmlns="http://www.w3.org/2000/svg"
+          fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
       <div class="hidden lg:flex gap-6">
         <a href="#" class="text-gray-600 hover:text-black">Home</a>
         <a href="#" class="text-gray-600 hover:text-black">Products</a>
         <a href="#" class="text-gray-600 hover:text-black">Resources</a>
         <a href="#" class="text-gray-600 hover:text-black">Pricing</a>
       </div>
-    </div>
-    <div class="flex gap-3">
-      <button class="px-4 py-2 rounded text-gray-700 hover:bg-gray-100">Log in</button>
-      <button class="px-4 py-2 rounded bg-gray-900 text-white font-semibold hover:bg-gray-700">Sign up</button>
-    </div>
-  </nav>
 
-  <!-- Header -->
-  <section class="container mx-auto mt-12 md:mt-20 text-left">
-    <h1 class="text-3xl md:text-7xl font-bold leading-tight">We’ve got a plan <br />that’s perfect for you</h1>
-    <div class="flex mt-6 mb-10 border border-gray-200 p-2 w-full max-w-xs rounded-md">
-      <button class="w-1/2 py-2 px-4 rounded bg-gray-900 text-white font-semibold text-sm">Monthly billing</button>
-      <button class="w-1/2 py-2 px-4 rounded text-sm">Annual billing</button>
-    </div>
-  </section>
+      <div class="hidden lg:flex gap-3">
+        <button class="px-4 py-2 rounded text-gray-700 hover:bg-gray-100">Log in</button>
+        <button class="px-4 py-2 rounded bg-gray-900 text-white font-semibold hover:bg-gray-700">Sign up</button>
+      </div>
+    </nav>
 
-  <!-- Pricing Cards -->
-  <section class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
-    <!-- Card Component -->
-    <article class="flex flex-col justify-between border rounded-xl bg-white shadow text-left">
-      <div class="p-6 flex flex-col gap-4">
-        <h2 class="text-xl font-bold">Basic plan</h2>
-        <div class="flex items-end gap-2">
-          <p class="text-5xl font-extrabold">$10</p>
-          <div class="text-sm font-medium text-gray-800">
-            <p>per user</p>
-            <p>per month</p>
+    <div id="mobile-menu" class="hidden flex flex-col gap-3 p-4 bg-white shadow-md lg:hidden">
+      <a href="#" class="text-gray-600 hover:text-black">Home</a>
+      <a href="#" class="text-gray-600 hover:text-black">Products</a>
+      <a href="#" class="text-gray-600 hover:text-black">Resources</a>
+      <a href="#" class="text-gray-600 hover:text-black">Pricing</a>
+      <button class=" text-black font-semibold py-2 px-4  border rounded hover:bg-gray-200">Log in</button>
+      <button class="bg-gray-900 text-white font-semibold py-2 px-4 rounded hover:bg-gray-700">Sign up</button>
+    </div>
+
+    <section class="container mx-auto mt-12 md:mt-20 text-left fade-slide-in fade-delay-2">
+      <h1 class="text-3xl md:text-7xl font-bold leading-tight">We’ve got a plan <br />that’s perfect for you</h1>
+      <div class="flex mt-6 mb-10 border border-gray-200 p-2 w-full max-w-xs rounded-md">
+        <button id="btn-monthly" class="w-1/2 py-2 px-4 rounded bg-gray-900 text-white font-semibold text-sm transition-colors">Monthly billing</button>
+        <button id="btn-annual" class="w-1/2 py-2 px-4 rounded text-sm transition-colors">Annual billing</button>
+      </div>
+    </section>
+
+    <!-- Pricing Cards -->
+    <section class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 mb-14 relative overflow-visible z-0 fade-slide-in fade-delay-2">
+      <!-- Card Component -->
+      <article class="transition-transform duration-300 scale-100 hover:scale-105 hover:shadow-2xl hover:z-20 relative cursor-pointer border rounded-xl bg-white shadow text-left flex flex-col justify-between cursor-pointer">
+        <div class="p-6 flex flex-col gap-4">
+          <h2 class="text-xl font-bold">Basic plan</h2>
+          <div class="flex items-end gap-2">
+            <p class="plan-price text-5xl font-extrabold transition-all duration-300 opacity-100 scale-100" data-monthly="10" data-annual="100">$10</p>
+            <div class="text-sm font-medium plan-labels">
+              <p class="plan-label">per user</p>
+              <p class="plan-period">per month</p>
+            </div>
+          </div>
+          <p class="plan-description" data-monthly="Basic features for up to 10 users." data-annual="Save 2 months! Basic features for up to 10 users.">Basic features for up to 10 users.</p>
+          <div class="flex flex-col gap-2">
+            <button class="w-full py-2 rounded bg-gray-900 text-white font-semibold transition transform duration-200 hover:scale-105 hover:bg-gray-700" data-monthly="Get started" data-annual="Get started - Annual">Get started</button>
+            <button class="w-full py-2 rounded border border-gray-800 text-black transition transform duration-200 hover:scale-105 hover:bg-gray-700">Chat to sales</button>
           </div>
         </div>
-        <p class="text-gray-700">Basic features for up to 10 users.</p>
-        <div class="flex flex-col gap-2">
-          <button class="w-full py-2 rounded bg-gray-900 text-white font-semibold">Get started</button>
-          <button class="w-full py-2 rounded border border-gray-800 text-black">Chat to sales</button>
+        <hr class="border-t border-black" />
+        <div class="flex flex-col p-6">
+          <h3 class="font-semibold">FEATURES</h3>
+          <p class="text-sm text-gray-700 mt-1">Everything in our Basic plan:</p>
+          <ul class="text-sm space-y-2 mt-4">
+            <li class="flex items-center"><span class="mr-2 text-green-500">✔</span> Access to basic features</li>
+            <li class="flex items-center"><span class="mr-2 text-green-500">✔</span> Basic reporting and analytics</li>
+            <li class="flex items-center"><span class="mr-2 text-green-500">✔</span> Up to 10 individual users</li>
+            <li class="flex items-center"><span class="mr-2 text-green-500">✔</span> 20GB individual data each user</li>
+            <li class="flex items-center"><span class="mr-2 text-green-500">✔</span> Basic chat and email support</li>
+          </ul>
         </div>
-      </div>
-      <hr class="border-t border-black" />
-      <div class="flex flex-col p-6">
-        <h3 class="font-semibold">FEATURES</h3>
-        <p class="text-sm text-gray-700 mt-1">Everything in our Basic plan:</p>
-        <ul class="text-sm space-y-2 mt-4">
-          <li class="flex items-center"><span class="mr-2 text-green-500">✔</span> Access to basic features</li>
-          <li class="flex items-center"><span class="mr-2 text-green-500">✔</span> Basic reporting and analytics</li>
-          <li class="flex items-center"><span class="mr-2 text-green-500">✔</span> Up to 10 individual users</li>
-          <li class="flex items-center"><span class="mr-2 text-green-500">✔</span> 20GB individual data each user</li>
-          <li class="flex items-center"><span class="mr-2 text-green-500">✔</span> Basic chat and email support</li>
-        </ul>
-      </div>
-    </article>
-
-    <!-- Business plan -->
-    <article class="relative flex flex-col justify-between border rounded-xl bg-gray-900 shadow text-left text-white">
-       <div class="absolute top-6 right-6 px-2 py-1 bg-[#adff12] text-black text-xs rounded-full font-bold">Popular</div>
-      <div class="p-6 flex flex-col gap-4">
-        <h2 class="text-xl font-bold text-[#adff12]">Business plan</h2>
-        <div class="flex items-end gap-2">
-          <p class="text-5xl font-extrabold">$20</p>
-          <div class="text-sm font-medium">
-            <p>per user</p>
-            <p>per month</p>
+      </article>
+      <!-- Business plan -->
+      <article class="transition-transform duration-300 scale-100  hover:scale-105 hover:shadow-2xl hover:z-20 relative cursor-pointer border rounded-xl bg-gray-900 text-white shadow text-left flex flex-col justify-between cursor-pointer">
+        <div class="absolute top-6 right-6 px-2 py-1 bg-[#adff12] text-black text-xs rounded-full font-bold">Popular</div>
+        <div class="p-6 flex flex-col gap-4">
+          <h2 class="text-xl font-bold text-[#adff12]">Business plan</h2>
+          <div class="flex items-end gap-2">
+            <p class="plan-price text-5xl font-extrabold transition-all duration-300 opacity-100 scale-100" data-monthly="20" data-annual="200">$20</p>
+            <div class="text-sm font-medium plan-labels">
+              <p class="plan-label">per user</p>
+              <p class="plan-period">per month</p>
+            </div>
+          </div>
+          <p class="plan-description text-gray-100" data-monthly="Growing teams up to 20 users." data-annual="Save 2 months! Growing teams up to 20 users.">Growing teams up to 20 users.</p>
+          <div class="flex flex-col gap-2">
+            <button class="w-full py-2 rounded bg-[#adff12] text-black font-semibold transition transform duration-200 hover:scale-105 hover:bg-[#9ecc0f]">Get started</button>
+            <button class="w-full py-2 rounded border border-gray-800 text-black bg-white transition transform duration-200 hover:scale-105 hover:bg-[#9ecc0f]">Chat to sales</button>
           </div>
         </div>
-        <p class="text-gray-100">Growing teams up to 20 users.</p>
-        <div class="flex flex-col gap-2">
-          <button class="w-full py-2 rounded bg-[#adff12] text-black font-semibold">Get started</button>
-          <button class="w-full py-2 rounded border border-gray-800 text-black bg-white">Chat to sales</button>
+        <hr class="border-t border-gray-100" />
+        <div class="flex flex-col p-6">
+          <h3 class="font-semibold text-gray-200">FEATURES</h3>
+          <p class="text-sm text-gray-200 mt-1">Everything in our Business plan:</p>
+          <ul class="text-sm space-y-2 mt-4">
+            <li class="flex items-center"><span class="mr-2">✔</span> 200+ integrations</li>
+            <li class="flex items-center"><span class="mr-2">✔</span> Advanced reporting and analytics</li>
+            <li class="flex items-center"><span class="mr-2">✔</span> Up to 20 individual users</li>
+            <li class="flex items-center"><span class="mr-2">✔</span> 40GB individual data each user</li>
+            <li class="flex items-center"><span class="mr-2">✔</span> Priority chat and email support</li>
+          </ul>
         </div>
-      </div>
-      <hr class="border-t border-gray-100" />
-      <div class="flex flex-col p-6">
-        <h3 class="font-semibold text-gray-200">FEATURES</h3>
-        <p class="text-sm text-gray-200 mt-1">Everything in our Business plan:</p>
-        <ul class="text-sm space-y-2 mt-4">
-          <li class="flex items-center"><span class="mr-2">✔</span> 200+ integrations</li>
-          <li class="flex items-center"><span class="mr-2">✔</span> Advanced reporting and analytics</li>
-          <li class="flex items-center"><span class="mr-2">✔</span> Up to 20 individual users</li>
-          <li class="flex items-center"><span class="mr-2">✔</span> 40GB individual data each user</li>
-          <li class="flex items-center"><span class="mr-2">✔</span> Priority chat and email support</li>
-        </ul>
-      </div>
-    </article>
-
-    <!-- Enterprise plan -->
-    <article class="flex flex-col justify-between border rounded-xl bg-white shadow text-left">
-      <div class="p-6 flex flex-col gap-4">
-        <h2 class="text-xl font-bold">Enterprise plan</h2>
-        <div class="flex items-end gap-2">
-          <p class="text-5xl font-extrabold">$40</p>
-          <div class="text-sm font-medium text-gray-800">
-            <p>per user</p>
-            <p>per month</p>
+      </article>
+      <!-- Enterprise plan -->
+      <article class="transform-gpu transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:z-20 relative cursor-pointer border rounded-xl bg-white shadow text-left flex flex-col justify-between">
+        <div class="p-6 flex flex-col gap-4">
+          <h2 class="text-xl font-bold">Enterprise plan</h2>
+          <div class="flex items-end gap-2">
+            <p class="plan-price text-5xl font-extrabold transition-all duration-300 opacity-100 scale-100" data-monthly="40" data-annual="400">$40</p>
+            <div class="text-sm font-medium plan-labels">
+              <p class="plan-label">per user</p>
+              <p class="plan-period">per month</p>
+            </div>
+          </div>
+          <p class="plan-description text-gray-700" data-monthly="Advanced features + unlimited users." data-annual="Save 2 months! Advanced features + unlimited users.">Advanced features + unlimited users.</p>
+          <div class="flex flex-col gap-2">
+            <button class="w-full py-2 rounded bg-gray-900 text-white font-semibold transition transform duration-200 hover:scale-105 hover:bg-gray-700">Get started</button>
+            <button class="w-full py-2 rounded border border-gray-800 text-black transition transform duration-200 hover:scale-105 hover:bg-gray-700">Chat to sales</button>
           </div>
         </div>
-        <p class="text-gray-700">Advanced features + unlimited users.</p>
-        <div class="flex flex-col gap-2">
-          <button class="w-full py-2 rounded bg-gray-900 text-white font-semibold">Get started</button>
-          <button class="w-full py-2 rounded border border-gray-800 text-black">Chat to sales</button>
+        <hr class="border-t border-black" />
+        <div class="flex flex-col p-6">
+          <h3 class="font-semibold">FEATURES</h3>
+          <p class="text-sm text-gray-700 mt-1">Everything in our Enterprise plan:</p>
+          <ul class="text-sm space-y-2 mt-4">
+            <li class="flex items-center"><span class="mr-2 text-green-500">✔</span> Enhanced custom fields</li>
+            <li class="flex items-center"><span class="mr-2 text-green-500">✔</span> Audit log and data history</li>
+            <li class="flex items-center"><span class="mr-2 text-green-500">✔</span> Unlimited individual data</li>
+            <li class="flex items-center"><span class="mr-2 text-green-500">✔</span> Personalized+priority service</li>
+            <li class="flex items-center"><span class="mr-2 text-green-500">✔</span> 40GB individual data each user</li>
+          </ul>
         </div>
-      </div>
-      <hr class="border-t border-black" />
-      <div class="flex flex-col p-6">
-        <h3 class="font-semibold">FEATURES</h3>
-        <p class="text-sm text-gray-700 mt-1">Everything in our Enterprise plan:</p>
-        <ul class="text-sm space-y-2 mt-4">
-          <li class="flex items-center"><span class="mr-2 text-green-500">✔</span> Enhanced custom fields</li>
-          <li class="flex items-center"><span class="mr-2 text-green-500">✔</span> Audit log and data history</li>
-          <li class="flex items-center"><span class="mr-2 text-green-500">✔</span> Unlimited individual data</li>
-          <li class="flex items-center"><span class="mr-2 text-green-500">✔</span> Personalized+priority service</li>
-        </ul>
-      </div>
-    </article>
-  </section>
-</body>
+      </article>
+    </section>
+  </body>
 </html>
