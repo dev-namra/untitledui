@@ -1,69 +1,48 @@
-# Pricing Plans & FAQ Page
+# Pricing Page - Untitled UI (Dribbble Inspired)
 
-A responsive pricing plans and FAQ landing page inspired by modern SaaS design patterns. Built using HTML and [Tailwind CSS](https://tailwindcss.com/), this project features:
+This is a responsive pricing page built using **HTML** and **Tailwind CSS**, inspired by a [Dribbble design by Jordan Hughes](https://dribbble.com/shots/18890939-Pricing-page-Untitled-UI).
 
-- Clean navigation bar
-- Responsive three-tier pricing cards (Basic, Business, Enterprise)
-- An FAQ section using accessible accordion panels
-- Modern, mobile-friendly layout
+## 🖼️ Inspiration
 
-## Preview
+The layout and visual design are based on the Dribbble shot:
+👉 [Untitled UI – Pricing Page](https://dribbble.com/shots/18890939-Pricing-page-Untitled-UI)
 
-*
+## 🔧 Tech Stack
 
-## Features
+- HTML5
+- Tailwind CSS (via CDN)
 
-- **Responsive**: Works seamlessly on mobile, tablet, and desktop
-- **Easy Customization**: Adjust content, plans, and branding
-- **Modern UI**: Beautiful with minimal setup, powered by Tailwind
-- **Accessible FAQ**: FAQ uses semantic HTML details/summary
+## 📦 Features
 
-## Getting Started
+- Fully responsive layout
+- Three pricing tiers: **Basic**, **Business**, and **Enterprise**
+- Monthly vs. annual billing toggle (visual only)
+- "Popular" badge on Business plan
+- Mobile-first, clean structure
+- Easily extendable and customizable
 
-1. **Download or Clone the repository**  
-git clone https://github.com/your-username/your-pricing-faq-page.git
+## 🧪 How to Run
 
-text
+1. Clone or download this repository.
+2. Open the `index.html` file in your browser.
+3. That's it—no build tools needed!
 
-2. **Open the Project**  
-Just open `index.html` in your web browser.
+## ✨ Screenshot
 
-3. **Or Create Your Own File**  
-Copy-paste the given HTML file into your preferred directory.
+![Pricing Page Screenshot](screenshot.png)
 
-## Usage
+> ⚠️ The original design belongs to Jordan Hughes. I have developed this layout from scratch using code, based on the visual reference. A screenshot of the implemented version is attached above.
 
-- **Edit Content**: Change plan details, company name, FAQs, or nav links directly in `index.html`.
-- **Branding**: Update company name/logo in the nav and footer.
-- **Styles**: To change appearance, modify Tailwind classes in the HTML.
+## 📌 Notes
 
-## Dependencies
+- This project is a **frontend-only clone** for practice and demonstration.
+- Functional parts like billing toggles or form submissions are **not interactive**.
+- No frameworks or build systems are used—just raw HTML and Tailwind via CDN.
 
-- [Tailwind CSS](https://cdn.tailwindcss.com) CDN (no build step needed)
-- A modern web browser
+## 📃 License
 
-## Customization
+This project is for **demo purposes** only and is **not affiliated with Untitled UI**. Please respect the original design copyright.
 
-- Replace the placeholder logo name with your brand’s logo or name.
-- Update FAQs easily in the FAQ section via the `<details>` and `<summary>` blocks.
-- For more features, like a pricing toggle or backend integration, consider adding JavaScript as needed.
+---
 
-## Folder Structure
-
-/project-root
-├── index.html
-├── screenshot.png # (optional) Page screenshot for the readme
-└── README.md
-
-text
-
-## Credits
-
-- Design inspired byJordan Hughes on [Dribble](https://dribbble.com/shots/18890939-Pricing-page-Untitled-UI)
-- UI built with [Tailwind CSS](https://tailwindcss.com/)
-
-## License
-
-MIT License. Feel free to use and adapt for personal or commercial projects.
-
-> For questions or ideas, feel free to open an Issue or Fork the repo! 🚀
+💡 Developed by [Mahak](https://github.com/dev-namra) – Frontend Developer
