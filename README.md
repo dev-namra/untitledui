@@ -2,22 +2,18 @@
 
 This is a responsive pricing page built using **HTML** and **Tailwind CSS**, inspired by a [Dribbble design by Jordan Hughes](https://dribbble.com/shots/18890939-Pricing-page-Untitled-UI).
 
-## 🖼️ Inspiration
-
-The layout and visual design are based on the Dribbble shot:
-👉 [Untitled UI – Pricing Page](https://dribbble.com/shots/18890939-Pricing-page-Untitled-UI)
 
 ## 🔧 Tech Stack
 
 - HTML5
 - Tailwind CSS (via CDN)
+- JavaScript
 
 ## 📦 Features
 
 - Fully responsive layout
 - Three pricing tiers: **Basic**, **Business**, and **Enterprise**
-- Monthly vs. annual billing toggle (visual only)
-- "Popular" badge on Business plan
+- Monthly vs. annual billing toggle 
 - Mobile-first, clean structure
 - Easily extendable and customizable
 
@@ -36,8 +32,7 @@ The layout and visual design are based on the Dribbble shot:
 ## 📌 Notes
 
 - This project is a **frontend-only clone** for practice and demonstration.
-- Functional parts like billing toggles or form submissions are **not interactive**.
-- No frameworks or build systems are used—just raw HTML and Tailwind via CDN.
+- No frameworks or build systems are used—just raw HTML, JavaScript and Tailwind via CDN.
 
 ## 📃 License
 
